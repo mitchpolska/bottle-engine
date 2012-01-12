@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <form action="" method="POST">
+    <ul id="navigation">
+    {% for field in form %}
+      {% if field.errors %}
+        <ul class="errors">
+        {% for error in field.errors %}<li>{{ error }}{% endfor %}
+        </ul>
+      {% endif %}    
+        <p>{{ field.label }}</p>
+        <li><a href="#">{{ field }}</a></li>
+    {% endfor %}
+    </ul>
+    <input type="submit" value="save" />
+    </form>
+    <h1>My Webpage</h1>
+</body>
+</html>
